@@ -19,7 +19,7 @@ The underlying question was *why for two patients with roughly equal low back pa
 ## Methods
 
 1. Patients are isolated to an approximately clinically homogeneous sample.
-2. Potentially important, actionable features are identified with the domain knowledge of the clinical team such as the whether or not the patient has had an x-ray, the number of physical therapy visits they have on record, and other various medical history characteristics.
+2. Potentially important, actionable features are identified with the domain knowledge of the clinical team such as whether or not the patient has had an x-ray, the number of physical therapy visits they have on record, and other various medical history characteristics.
 3. Adjustments are made to account for class imbalance.
 4. A random forest is fit to the bootstrapped sample and then tested on a validation subset of the data.
-5.  Feature importance is interpreted from a clinical perspective
+5.  Feature importance is interpreted from a clinical perspective.
