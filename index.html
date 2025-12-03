@@ -42,11 +42,6 @@
       margin: 0.25rem 0 0.75rem 0;
     }
 
-    .lead {
-      font-size: 1.05rem;
-      color: #333;
-    }
-
     ul, ol {
       margin: 0.25rem 0 0.75rem 1.5rem;
     }
@@ -66,6 +61,11 @@
 
     .section.alt {
       border-left-color: #ff7f50;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #333;
     }
 
     .tagline {
@@ -159,10 +159,60 @@
       background-color: #f0f3ff;
       font-size: 0.85rem;
     }
+
+    /* Third section: embedded HTML + inline R code */
+    .code-wrapper {
+      background-color: #0b1020;
+      color: #e6edf3;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow: auto;
+      font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .code-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .code-button {
+      border: 1px solid #4b6aff;
+      background-color: #141b3a;
+      color: #e6edf3;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .code-button:hover {
+      background-color: #1b2652;
+    }
+
+    .inline-r {
+      background-color: rgba(255, 215, 0, 0.1);
+      border-bottom: 1px dashed #ffd700;
+      padding: 0 1px;
+    }
+
+    .inline-r.hidden {
+      background-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre;
+    }
   </style>
 </head>
 <body>
 
+  <!-- 1. Professional Presence -->
   <h1>Professional Presence</h1>
 
   <div class="section">
@@ -303,65 +353,7 @@
 
   <hr class="divider" />
 
-  <div class="section alt">
-    <h2>Skit Concept</h2>
-    <p class="tagline">
-      Filmed in the style of an office mockumentary to illustrate professional presence.
-    </p>
-    <p>
-      The skit features four personalities and one neutral character: <span class="role">Nervous</span>, <span class="role">Arrogant</span>, <span class="role">Disorganized</span>, <span class="role">Good Professional Presence</span>, and <span class="role">Neutral</span> as the meeting conductor.
-    </p>
-
-    <h3>Character Highlights</h3>
-    <ul>
-      <li><span class="role">Nervous</span>: Self-conscious, fidgeting, submissive language, fussing with clothing.</li>
-      <li><span class="role">Arrogant</span>: Encroaches on space, interrupts, phone on desk, condescending, flirts.</li>
-      <li><span class="role">Good PP</span>: Prepared, confident greeting, good posture, “Yes, and…” mindset.</li>
-      <li><span class="role">Disorganized</span>: Calls into meeting, rambles, noisy, unprepared.</li>
-      <li><span class="role">Neutral</span>: Facilitates the meeting and drives the discussion.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Scenario Structure</h2>
-
-    <p class="scenario-title">Possible Scenario 1</p>
-    <ul>
-      <li>Five people: meeting lead, two general actors, one Good PP, one Bad PP.</li>
-      <li>Good PP arrives prepared, engaged, and professionally dressed.</li>
-      <li>Bad PP arrives late, distracted, underprepared, and less engaged.</li>
-      <li>The audience is asked to identify good and bad examples of professional presence and reflect on best practices.</li>
-    </ul>
-
-    <p class="scenario-title">Scenario 2 (Alternative Flow)</p>
-    <ul>
-      <li>Neutral introduces the meeting and each character enters or joins in turn.</li>
-      <li>Scenes highlight nervous language, arrogance, disorganization, and strong professional presence.</li>
-      <li>Monologues give insight into each character’s mindset and behavior.</li>
-      <li>The scenario emphasizes clothing, engagement, body language, and verbal communication.</li>
-    </ul>
-  </div>
-
-  <div class="section alt">
-    <h2>Key Stats and Takeaways</h2>
-
-    <div class="stat">
-      <span class="highlight">Key perception factors:</span>
-      Visual appearance, tone of voice, and word choice strongly influence how others perceive you, as discussed in research on communication and professional presence.
-    </div>
-
-    <p>
-      First impressions form quickly, so professional presence in the first few seconds of an interaction is especially important.
-    </p>
-
-    <p class="notes">
-      Use the skit and the outline to prompt discussion, ask for audience feedback, and reinforce key points about online presence, phone etiquette, body language, clothing, hygiene, and communication.
-    </p>
-  </div>
-
-  <hr class="divider" />
-
-  <!-- New Project Section -->
+  <!-- 2. Project Description -->
   <div class="section">
     <div class="badge">Data Science Project</div>
     <div class="project-title">
@@ -426,6 +418,62 @@
       <li>Cost concentration analysis</li>
     </ul>
   </div>
+
+  <hr class="divider" />
+
+  <!-- 3. Embedded HTML + inline R code -->
+  <div class="section">
+    <h2>Model HTML with Inline R Code</h2>
+    <p class="notes">
+      The block below contains the exported model HTML with inline R code. Use the controls to copy or toggle highlighting of inline R chunks.
+    </p>
+
+    <div class="code-controls">
+      <button class="code-button" id="toggle-r-btn">Toggle inline R highlight</button>
+      <button class="code-button" id="copy-code-btn">Copy code</button>
+    </div>
+
+    <div class="code-wrapper">
+      <pre id="model-html-code">
+<!--
+PASTE THE CONTENTS OF paste.txt HERE, AS-IS.
+
+If you want inline R highlighting, you can optionally wrap inline R segments manually like:
+<span class="inline-r">`r some_r_code_here`</span>
+
+Do NOT wrap the whole file in <html> / <body> again; just paste the inner HTML from paste.txt.
+-->
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    // Toggle inline R highlighting
+    (function () {
+      const toggleBtn = document.getElementById("toggle-r-btn");
+      const copyBtn = document.getElementById("copy-code-btn");
+      const codePre = document.getElementById("model-html-code");
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", function () {
+          const rElems = codePre.querySelectorAll(".inline-r");
+          rElems.forEach(function (el) {
+            el.classList.toggle("hidden");
+          });
+        });
+      }
+
+      // Copy code to clipboard
+      if (copyBtn && navigator.clipboard) {
+        copyBtn.addEventListener("click", function () {
+          const text = codePre.innerText || codePre.textContent || "";
+          navigator.clipboard.writeText(text.trim()).catch(function (err) {
+            console.error("Copy failed:", err);
+          });
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
