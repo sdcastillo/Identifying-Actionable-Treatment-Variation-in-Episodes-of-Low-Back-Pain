@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Professional Presence Outline</title>
+  <title>Professional Presence & Treatment Variation Project</title>
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -111,6 +111,53 @@
       height: 1px;
       background: linear-gradient(to right, #d0d7e7, #ffffff);
       margin: 1.5rem 0;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1f3b7b;
+      margin-bottom: 0.25rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background-color: #e8f3ff;
+      color: #234d8c;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-link a {
+      color: #ff7f50;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project-link a:hover {
+      text-decoration: underline;
+    }
+
+    .pill-list {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill-list li {
+      margin: 0;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background-color: #f0f3ff;
+      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -310,6 +357,74 @@
     <p class="notes">
       Use the skit and the outline to prompt discussion, ask for audience feedback, and reinforce key points about online presence, phone etiquette, body language, clothing, hygiene, and communication.
     </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- New Project Section -->
+  <div class="section">
+    <div class="badge">Data Science Project</div>
+    <div class="project-title">
+      Identifying Actionable Treatment Variation in Episodes of Low Back Pain
+    </div>
+    <p>
+      Source code from a project with Blue Cross Blue Shield of Massachusetts, with data and additional files omitted to respect intellectual property and confidentiality.
+    </p>
+
+    <p class="project-link">
+      <strong>Model artifact:</strong>
+      <a href="http://htmlpreview.github.io/?https://github.com/sdcastillo/Identifying-Actionable-Treatment-Variation-in-Episodes-of-Low-Back-Pain/blob/master/Patient%20Pathways%20Fitted%20Model%20(1).html" target="_blank" rel="noopener noreferrer">
+        Link to the fitted model HTML
+      </a>
+    </p>
+  </div>
+
+  <div class="section alt">
+    <h2>Background</h2>
+    <p>
+      Low back pain affects a large majority of adults at some point, and treatment expenditures in the United States are substantial each year.
+    </p>
+    <p>
+      Despite extensive clinical guidance, practice patterns still vary widely, so this project focused on identifying where providers can adjust care pathways to improve outcomes while reducing overall medical costs.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Data Overview</h2>
+    <p>
+      The analysis used roughly 33,000 treatment episodes of low back pain from 2015–2016, focusing on how costs concentrate in a small subset of cases.
+    </p>
+    <p>
+      The highest-cost 5 percent of episodes accounted for more than half of total spending, and all of these high-cost cases included surgery at some point, within a clinically homogeneous group of patients with similar health status.
+    </p>
+  </div>
+
+  <div class="section alt">
+    <h2>Objective</h2>
+    <p>
+      The central question was why patients with similar low back pain conditions can end up on very different treatment trajectories, with some receiving expensive surgical procedures while others receive non-surgical orthopedic care at a much lower cost.
+    </p>
+    <p>
+      The model supported an analysis of which factors are associated with these divergent pathways, helping highlight levers that clinicians could adjust to steer patients toward effective, lower-cost options when appropriate.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Methods</h2>
+    <ol>
+      <li>Isolate patients into an approximately clinically homogeneous cohort to reduce confounding by baseline health differences.</li>
+      <li>Identify potentially important and actionable features with clinical input, such as imaging use, physical therapy utilization, and key medical history characteristics.</li>
+      <li>Address class imbalance so that the model can learn from both common and rare outcome patterns.</li>
+      <li>Fit a random forest to a bootstrapped training sample and evaluate performance on a validation subset.</li>
+      <li>Interpret feature importance in close collaboration with clinicians to translate model signals into meaningful, actionable insights.</li>
+    </ol>
+
+    <ul class="pill-list">
+      <li>Random forest</li>
+      <li>Class imbalance handling</li>
+      <li>Clinical feature engineering</li>
+      <li>Cost concentration analysis</li>
+    </ul>
   </div>
 
 </body>
